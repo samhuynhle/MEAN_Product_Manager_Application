@@ -1,0 +1,23 @@
+<style>
+a {margin-left: 25px;}
+button {margin-left: 10px;}
+input {margin-left: 10px; margin-right: 10px;}
+</style>
+
+<h4> Create a New Product </h4>
+
+<div>
+
+    <p *ngIf="success_message.errors">{{success_message.message}}</p>
+
+    <form (submit)="submit_form()">
+        <h3>Title: </h3>
+        <input type="text" name="formdata.title" [(ngModel)]="formdata.title" />
+        <h3>Price: </h3>
+        <input type="number" name="formdata.price" [(ngModel)]="formdata.price" />
+        <h3>Image Url: </h3>
+        <input type="text" name="formdata.image_url" [(ngModel)]="formdata.image_url" />
+        <input class="waves-effect waves-light btn" type="submit">
+        <button class="waves-effect waves-light btn red" [routerLink]="['/productlist']">Cancel</button>
+    </form>
+</div>

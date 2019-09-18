@@ -1,0 +1,16 @@
+<style>
+a {margin-left: 25px;}
+button {margin-left: 10px;}
+input {margin-left: 10px; margin-right: 10px;}
+</style>
+
+<h4> Product List </h4>
+<div *ngFor="let product of all_products" style="display: inline-block; width: 200px; height: 25px; margin-left: 50px">
+    <div>
+        <img src={{product.image_url}} style="height: 100px">
+        <p>{{product.title}}</p>
+        <p>{{product.price}}</p>
+        <button class="waves-effect waves-light btn" [routerLink]="'/editproduct/' + product._id">Edit</button>
+        <button class="waves-effect waves-light btn red" (click)="clickDelete(product._id)">Delete</button>
+    </div>
+</div>
